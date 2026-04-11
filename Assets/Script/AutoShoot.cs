@@ -1,14 +1,19 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class AutoShoot : MonoBehaviour
 {
     public GameObject bulletPrefab;
-    public float fireRate = 1f;
 
     float timer;
+    List<Transform> enemies = new List<Transform>();
 
     void Update()
     {
+        if (PlayerStats.instance == null) return;
+
+        float fireRate = PlayerStats.instance.attackSpeed; // 🔥 ใช้ stat
+
         timer += Time.deltaTime;
 
         if (timer >= 1f / fireRate)
@@ -20,26 +25,45 @@ public class AutoShoot : MonoBehaviour
 
     void ShootNearest()
     {
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        if (enemies.Count == 0) return;
 
-        if (enemies.Length == 0) return;
+        Transform nearest = null;
+        float minDist = Mathf.Infinity;
 
-        GameObject nearest = enemies[0];
-        float minDist = Vector2.Distance(transform.position, nearest.transform.position);
-
-        foreach (GameObject e in enemies)
+        for (int i = enemies.Count - 1; i >= 0; i--)
         {
-            float dist = Vector2.Distance(transform.position, e.transform.position);
+            if (enemies[i] == null)
+            {
+                enemies.RemoveAt(i);
+                continue;
+            }
+
+            float dist = Vector2.Distance(transform.position, enemies[i].position);
+
             if (dist < minDist)
             {
                 minDist = dist;
-                nearest = e;
+                nearest = enemies[i];
             }
         }
 
-        Vector2 dir = (nearest.transform.position - transform.position).normalized;
+        if (nearest == null) return;
+
+        Vector2 dir = (nearest.position - transform.position).normalized;
 
         GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
         bullet.GetComponent<Bullet>().SetDirection(dir);
+    }
+
+    public void AddEnemy(Transform e)
+    {
+        if (!enemies.Contains(e))
+            enemies.Add(e);
+    }
+
+    public void RemoveEnemy(Transform e)
+    {
+        if (enemies.Contains(e))
+            enemies.Remove(e);
     }
 }

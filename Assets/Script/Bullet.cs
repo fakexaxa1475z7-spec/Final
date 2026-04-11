@@ -4,29 +4,43 @@ public class Bullet : MonoBehaviour
 {
     public float speed = 10f;
     public float lifeTime = 3f;
+    public int damage = 1;
 
     Vector2 direction;
+    Rigidbody2D rb;
 
     public void SetDirection(Vector2 dir)
     {
-        direction = dir;
+        direction = dir.normalized;
     }
 
     void Start()
     {
-        Destroy(gameObject, lifeTime);
-    }
+        damage = PlayerStats.instance.damage;
 
-    void Update()
-    {
-        transform.Translate(direction * speed * Time.deltaTime);
+        rb = GetComponent<Rigidbody2D>();
+
+        rb.linearVelocity = direction * speed; // 🔥 ใช้ physics
+
+        Destroy(gameObject, lifeTime);
     }
 
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.CompareTag("Enemy"))
         {
-            Destroy(col.gameObject);
+            // 🔥 ส่ง damage ไป enemy
+            EnemyHealth enemy = col.GetComponent<EnemyHealth>();
+
+            if (enemy != null)
+            {
+                enemy.TakeDamage(damage);
+            }
+            else
+            {
+                Destroy(col.gameObject); // fallback
+            }
+
             Destroy(gameObject);
         }
     }
