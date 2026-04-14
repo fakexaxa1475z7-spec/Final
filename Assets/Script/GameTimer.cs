@@ -1,8 +1,11 @@
-using UnityEngine;
 using TMPro;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameTimer : MonoBehaviour
 {
+    public bool isBossLevel = false; // 🔥 กำหนดใน Inspector
+
     public float gameTime = 60f;
 
     public TextMeshProUGUI timerText; // 🔥 ใช้ TMP
@@ -10,9 +13,13 @@ public class GameTimer : MonoBehaviour
     float currentTime;
     bool isGameOver = false;
 
+    int total = 0;
+
     void Start()
     {
+        isGameOver = false;
         currentTime = gameTime;
+        total = PlayerPrefs.GetInt("META_MONEY", 0);
     }
 
     void Update()
@@ -46,8 +53,21 @@ public class GameTimer : MonoBehaviour
 
     void EndGame()
     {
-        isGameOver = true;
+        if (isBossLevel)
+        {
+            isGameOver = true;
 
-        FindObjectOfType<LevelUpManager>().OpenLevelUp();
+            total += 100; // 🔥 สมมติได้ 100 META_MONEY จากการชนะบอส
+            PlayerPrefs.SetInt("META_MONEY", total);
+            PlayerPrefs.Save();
+
+            SceneManager.LoadScene("EndGame");
+        }
+        else
+        {
+             isGameOver = true;
+
+            FindObjectOfType<LevelUpManager>().OpenLevelUp();
+        }       
     }
 }

@@ -17,6 +17,7 @@ public class PlayerExp : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        ResetExp();
     }
 
     public void AddExp(int amount)
@@ -32,5 +33,10 @@ public class PlayerExp : MonoBehaviour
             return true;
         }
         return false;
+    }
+
+    public void ResetExp()
+    {
+        currentExp = 0;
     }
 }
