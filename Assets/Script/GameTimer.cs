@@ -61,6 +61,7 @@ public class GameTimer : MonoBehaviour
             PlayerPrefs.SetInt("META_MONEY", total);
             PlayerPrefs.Save();
 
+            EndGameData.instance.isWin = true;
             SceneManager.LoadScene("EndGame");
         }
         else

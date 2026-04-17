@@ -1,9 +1,12 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class PlayerHealth : MonoBehaviour
 {
+    public static PlayerHealth instance;
+
     public int maxHP = 10;
     int currentHP;
     float regenTimer = 0f;
@@ -11,6 +14,18 @@ public class PlayerHealth : MonoBehaviour
     public float invincibleTime = 1f;
     bool isInvincible = false;
     SpriteRenderer sr;
+
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     void Start()
     {
@@ -89,7 +104,8 @@ public class PlayerHealth : MonoBehaviour
     void Die()
     {
         Debug.Log("Player Dead");
-        gameObject.SetActive(false);
+        EndGameData.instance.isWin = false;
+        SceneManager.LoadScene("EndGame");
     }
 
     public void SetMaxHP(int newMaxHP, bool healFull = true)
@@ -110,4 +126,8 @@ public class PlayerHealth : MonoBehaviour
 
         Debug.Log("HP Updated: " + currentHP + "/" + maxHP);
     }
+    public float GetHPPercent()
+    {
+        return (float)currentHP / maxHP;
+    }   
 }
