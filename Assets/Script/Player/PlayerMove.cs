@@ -2,9 +2,8 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    public float speed = 5f;
     Rigidbody2D rb;
-    Vector2 move;
+    Vector2 input;
 
     void Start()
     {
@@ -13,12 +12,14 @@ public class PlayerMove : MonoBehaviour
 
     void Update()
     {
-        move.x = Input.GetAxis("Horizontal");
-        move.y = Input.GetAxis("Vertical");
+        input.x = Input.GetAxisRaw("Horizontal");
+        input.y = Input.GetAxisRaw("Vertical");
     }
 
     void FixedUpdate()
     {
-        rb.linearVelocity = move * speed;
+        float speed = PlayerStats.instance.moveSpeed; // 🔥 ดึงจาก stat
+
+        rb.velocity = input.normalized * speed;
     }
 }

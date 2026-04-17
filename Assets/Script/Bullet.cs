@@ -29,17 +29,17 @@ public class Bullet : MonoBehaviour
     {
         if (col.CompareTag("Enemy"))
         {
-            // 🔥 ส่ง damage ไป enemy
-            EnemyHealth enemy = col.GetComponent<EnemyHealth>();
+            bool isCrit;
+            int dmg = PlayerStats.instance.GetDamage(out isCrit);
 
+            EnemyHealth enemy = col.GetComponent<EnemyHealth>();
             if (enemy != null)
             {
-                enemy.TakeDamage(damage);
+                enemy.TakeDamage(dmg, isCrit);
             }
-            else
-            {
-                Destroy(col.gameObject); // fallback
-            }
+
+            if (isCrit)
+                Debug.Log("CRIT! " + dmg);
 
             Destroy(gameObject);
         }

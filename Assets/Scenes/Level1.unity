@@ -1841,7 +1841,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75f0860301421b7418d3bf00da5c09fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMove
-  speed: 5
 --- !u!212 &521701588
 SpriteRenderer:
   serializedVersion: 2
@@ -2032,6 +2031,10 @@ MonoBehaviour:
   damage: 1
   attackSpeed: 1
   maxHP: 10
+  hpRegen: 0
+  critRate: 0.1
+  critDamage: 2
+  moveSpeed: 5
   defaultCharacter: {fileID: 11400000, guid: aa27a96c3b073af418a11f7506a88f60, type: 2}
 --- !u!1 &588935102
 GameObject:
@@ -3625,6 +3628,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 92171202428e8f34aafc3e13db5a8633, type: 2}
   - {fileID: 11400000, guid: 05014bbff3c082e46b490efa97374bb4, type: 2}
   - {fileID: 11400000, guid: b99c82266e8e78e428cf00dd0d49855d, type: 2}
+  - {fileID: 11400000, guid: 637d011aec7854647b44f58d44454928, type: 2}
+  - {fileID: 11400000, guid: a8f85c980cf17724db0d39381795adbe, type: 2}
+  - {fileID: 11400000, guid: e58ae15ed5be3eb44ade8d175558ffb1, type: 2}
+  - {fileID: 11400000, guid: 9d84a9056be6291428e33e06bb74db39, type: 2}
   buttons:
   - {fileID: 375457859}
   - {fileID: 827682070}
@@ -3652,6 +3659,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3f377bba72df60b46be133cd26e010bb, type: 2}
   - {fileID: 11400000, guid: d798c812263c11a4a96e46d3135355c1, type: 2}
   - {fileID: 11400000, guid: 8efee4e008c612f49b5697986b77825e, type: 2}
+  - {fileID: 11400000, guid: ae604513f96be654e9b48b323cadea14, type: 2}
+  - {fileID: 11400000, guid: 08db30841471eee429a832ec4ae1af59, type: 2}
+  - {fileID: 11400000, guid: d798c812263c11a4a96e46d3135355c1, type: 2}
+  - {fileID: 11400000, guid: 35e167d8a119aee488f6d9921f57ac2a, type: 2}
   level: 1
 --- !u!1 &1747035873
 GameObject:

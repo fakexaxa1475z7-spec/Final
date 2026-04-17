@@ -42,7 +42,7 @@ public class LevelUpManager : MonoBehaviour
         player.ApplyUpgrade(up);
 
         panel.SetActive(false);
-        Time.timeScale = 1f;
+        Time.timeScale = 0f;
 
         // 👉 ไป Shop ต่อ
         FindObjectOfType<ShopManager>().OpenShop();

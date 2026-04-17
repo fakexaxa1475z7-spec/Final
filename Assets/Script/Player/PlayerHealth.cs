@@ -6,6 +6,7 @@ public class PlayerHealth : MonoBehaviour
 {
     public int maxHP = 10;
     int currentHP;
+    float regenTimer = 0f;
 
     public float invincibleTime = 1f;
     bool isInvincible = false;
@@ -17,6 +18,32 @@ public class PlayerHealth : MonoBehaviour
 
         maxHP = PlayerStats.instance.maxHP; // 🔥 ดึงจาก stats
         currentHP = maxHP;
+    }
+    void Update()
+    {
+        RegenHP();
+    }
+
+    void RegenHP()
+    {
+        float regen = PlayerStats.instance.hpRegen;
+
+        if (regen <= 0) return;
+        if (currentHP >= maxHP) return;
+
+        regenTimer += Time.deltaTime;
+
+        if (regenTimer >= 1f)
+        {
+            int healAmount = Mathf.FloorToInt(regen);
+
+            if (healAmount > 0)
+            {
+                TakeHeal(healAmount);
+            }
+
+            regenTimer = 0f;
+        }
     }
 
     IEnumerator Flash()

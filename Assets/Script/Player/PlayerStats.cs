@@ -9,6 +9,12 @@ public class PlayerStats : MonoBehaviour
     public int damage = 1;
     public float attackSpeed = 1f;
     public int maxHP = 10;
+    public float hpRegen = 0f;
+
+    public float critRate = 0.1f;     // 10%
+    public float critDamage = 2f;   // x2 ดาเมจ
+
+    public float moveSpeed = 5f;
 
     [SerializeField] CharacterData defaultCharacter;
     void Awake()
@@ -45,10 +51,24 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
+    public int GetDamage(out bool isCrit)
+    {
+        isCrit = Random.value < critRate;
+
+        if (isCrit)
+            return Mathf.RoundToInt(damage * critDamage);
+        else
+            return damage;
+    }
+
     public void ApplyUpgrade(UpgradeData up)
     {
         damage += up.damage;
         attackSpeed += up.attackSpeed;
         maxHP += up.hp;
+        hpRegen += up.hpRegen;
+        critRate += up.critRate;
+        critDamage += up.critDamage;
+        moveSpeed += up.moveSpeed;
     }
 }

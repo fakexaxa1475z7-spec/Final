@@ -9,6 +9,10 @@ public class CharacterData : ScriptableObject
     public int maxHP;
     public int damage;
     public float attackSpeed;
+    public float critRate;
+    public float critDamage;
+    public float moveSpeed;
+    public float hpRegen;
 
     public int unlockCost; // 💰 ราคา
 }

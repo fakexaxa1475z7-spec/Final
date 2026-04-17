@@ -17,4 +17,8 @@ MonoBehaviour:
   maxHP: 10
   damage: 2
   attackSpeed: 1
+  critRate: 0.1
+  critDamage: 2
+  moveSpeed: 5
+  hpRegen: 0.1
   unlockCost: 0
