@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3072ad88b5c0d648bdeeeacf0599896, type: 3}
   m_Name: C_Normie
   m_EditorClassIdentifier: Assembly-CSharp::CharacterData
-  characterID: 01
+  isDefault: 1
+  characterID: C_Normie
   characterName: Normie
   maxHP: 10
   damage: 2

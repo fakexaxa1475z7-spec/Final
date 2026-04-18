@@ -24,8 +24,7 @@ public class PlayerStats : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
 
-            if (selectedCharacter == null)
-                selectedCharacter = defaultCharacter;
+            LoadCharacter(); // 🔥 ใช้ตัวนี้แทน
 
             ApplyCharacter();
         }
@@ -42,12 +41,42 @@ public class PlayerStats : MonoBehaviour
             maxHP = selectedCharacter.maxHP;
             damage = selectedCharacter.damage;
             attackSpeed = selectedCharacter.attackSpeed;
+            hpRegen = selectedCharacter.hpRegen;
+            critRate = selectedCharacter.critRate;
+            critDamage = selectedCharacter.critDamage;
+            moveSpeed = selectedCharacter.moveSpeed;
 
             Debug.Log("Applied: " + selectedCharacter.characterName);
         }
         else
         {
             Debug.LogWarning("No character selected!");
+        }
+    }
+    void LoadCharacter()
+    {
+        string id = PlayerPrefs.GetString("Character", "");
+
+        Debug.Log("Loading Character: " + id);
+
+        if (!string.IsNullOrEmpty(id))
+        {
+            CharacterData data = Resources.Load<CharacterData>(id);
+
+            if (data != null)
+            {
+                selectedCharacter = data;
+            }
+            else
+            {
+                Debug.LogError("❌ CharacterData not found: " + id);
+                selectedCharacter = defaultCharacter;
+            }
+        }
+        else
+        {
+            Debug.LogWarning("⚠ No saved character, using default");
+            selectedCharacter = defaultCharacter;
         }
     }
 

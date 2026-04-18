@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3072ad88b5c0d648bdeeeacf0599896, type: 3}
   m_Name: C_Tank
   m_EditorClassIdentifier: Assembly-CSharp::CharacterData
-  characterID: 03
+  isDefault: 0
+  characterID: C_Tank
   characterName: Tank
   maxHP: 15
   damage: 1

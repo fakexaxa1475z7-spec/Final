@@ -10,54 +10,87 @@ public class CharacterButton : MonoBehaviour
     public TextMeshProUGUI costText;
     public GameObject lockIcon;
     public Button button;
+    public Image bg;
 
-    public MetaCurrency exp; // ใช้ EXP ซื้อ
+    CharacterSelectManager manager;
 
     void Start()
+    {
+        manager = CharacterSelectManager.instance;
+
+        manager.RegisterButton(this);
+
+        // 🔥 กัน lock icon บังคลิก
+        if (lockIcon.TryGetComponent<Image>(out var img))
+            img.raycastTarget = false;
+
+        UpdateUI();
+        UpdateSelection();
+
+        MetaCurrency.instance.OnMoneyChanged += OnMoneyChanged;
+        CharacterUnlockSystem.OnUnlock += OnUnlock;
+    }
+
+    void OnDestroy()
+    {
+        MetaCurrency.instance.OnMoneyChanged -= OnMoneyChanged;
+        CharacterUnlockSystem.OnUnlock -= OnUnlock;
+    }
+
+    void OnMoneyChanged(int _)
     {
         UpdateUI();
     }
 
-    void UpdateUI()
+    void OnUnlock()
+    {
+        UpdateUI();
+    }
+
+    public void UpdateSelection()
+    {
+        if (manager.currentSelected == data)
+            bg.color = Color.green;
+        else
+            bg.color = Color.white;
+    }
+
+    public void UpdateUI()
     {
         nameText.text = data.characterName;
 
-        if (CharacterUnlockSystem.IsUnlocked(data.characterID))
+        bool unlocked = CharacterUnlockSystem.IsUnlocked(data);
+
+        if (unlocked)
         {
             lockIcon.SetActive(false);
-            costText.text = "";
+            costText.text = "SELECT";
             button.interactable = true;
         }
         else
         {
             lockIcon.SetActive(true);
             costText.text = "Unlock: " + data.unlockCost;
+            button.interactable = MetaCurrency.instance.total >= data.unlockCost;
         }
     }
 
     public void OnClick()
     {
-        if (CharacterUnlockSystem.IsUnlocked(data.characterID))
+        bool unlocked = CharacterUnlockSystem.IsUnlocked(data);
+
+        if (unlocked)
         {
-            // ✅ เลือกตัวละคร
-            PlayerStats.selectedCharacter = data;
-
-            // 🔥 เพิ่มบรรทัดนี้
-            if (PlayerStats.instance != null)
-                PlayerStats.instance.ApplyCharacter();
-
-            Debug.Log("Selected: " + data.characterName);
+            manager.SelectCharacter(data);
         }
         else
         {
-            if (exp.Spend(data.unlockCost))
+            if (MetaCurrency.instance.Spend(data.unlockCost))
             {
                 CharacterUnlockSystem.Unlock(data.characterID);
-                UpdateUI();
-            }
-            else
-            {
-                Debug.Log("Not enough EXP!");
+
+                // 🔥 unlock แล้วเลือกทันที
+                manager.SelectCharacter(data);
             }
         }
     }

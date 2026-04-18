@@ -1,17 +1,21 @@
 using UnityEngine;
+using System;
 
 public class MetaCurrency : MonoBehaviour
 {
     public static MetaCurrency instance;
 
     public int total = 0;
+    public Action<int> OnMoneyChanged;
 
     void Awake()
     {
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject); // 🔥 ข้าม scene
+            DontDestroyOnLoad(gameObject);
+
+            total = PlayerPrefs.GetInt("META_MONEY", 0);
         }
         else
         {
@@ -19,34 +23,30 @@ public class MetaCurrency : MonoBehaviour
         }
     }
 
-    void Start()
-    {
-        total = PlayerPrefs.GetInt("META_MONEY", 0);
-    }
-
-    // ➕ เพิ่มเงินถาวร
     public void Add(int amount)
     {
         total += amount;
-        Debug.Log("Total Money: " + total);
-        PlayerPrefs.SetInt("META_MONEY", total);
-        PlayerPrefs.Save();
+        Save();
+
+        OnMoneyChanged?.Invoke(total);
     }
 
-    // 💸 ใช้เงินถาวร
     public bool Spend(int amount)
     {
         if (total >= amount)
         {
             total -= amount;
+            Save();
+
+            OnMoneyChanged?.Invoke(total);
             return true;
-            PlayerPrefs.SetInt("META_MONEY", total);
-            PlayerPrefs.Save();
         }
+
+        Debug.Log("❌ Not enough money!");
         return false;
     }
 
-    void OnApplicationQuit()
+    void Save()
     {
         PlayerPrefs.SetInt("META_MONEY", total);
         PlayerPrefs.Save();

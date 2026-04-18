@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3072ad88b5c0d648bdeeeacf0599896, type: 3}
   m_Name: C_Gunner
   m_EditorClassIdentifier: Assembly-CSharp::CharacterData
-  characterID: 02
+  isDefault: 0
+  characterID: C_Gunner
   characterName: Gunner
   maxHP: 8
   damage: 4
