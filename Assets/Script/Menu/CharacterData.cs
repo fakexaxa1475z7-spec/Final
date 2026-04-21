@@ -14,6 +14,14 @@ public class CharacterData : ScriptableObject
     public float critDamage;
     public float moveSpeed;
     public float hpRegen;
+    public WeaponData startingWeapon;
 
     public int unlockCost;
+}
+
+[System.Serializable]
+public class WeaponSlot
+{
+    public WeaponData weapon;
+    public float timer;
 }

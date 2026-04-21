@@ -105,6 +105,7 @@ public class PlayerHealth : MonoBehaviour
     {
         Debug.Log("Player Dead");
         EndGameData.instance.isWin = false;
+        Destroy(this);
         SceneManager.LoadScene("EndGame");
     }
 

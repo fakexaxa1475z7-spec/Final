@@ -1,12 +1,16 @@
+using UnityEngine;
+
 public static class ShopData
 {
-    public static bool[] lockedSlots;
+    public static bool[] upgradeLocked;
+    public static bool[] weaponLocked;
 
-    public static void Init(int size)
+    public static void Init(int upgradeSize, int weaponSize)
     {
-        if (lockedSlots == null || lockedSlots.Length != size)
-        {
-            lockedSlots = new bool[size];
-        }
+        if (upgradeLocked == null || upgradeLocked.Length != upgradeSize)
+            upgradeLocked = new bool[upgradeSize];
+
+        if (weaponLocked == null || weaponLocked.Length != weaponSize)
+            weaponLocked = new bool[weaponSize];
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class GameTimer : MonoBehaviour
 {
-    public bool isBossLevel = false; // 🔥 กำหนดใน Inspector
+    static public bool isBossLevel = false; // 🔥 กำหนดใน Inspector
 
     public float gameTime = 60f;
 
@@ -60,7 +60,7 @@ public class GameTimer : MonoBehaviour
             total += 100; // 🔥 สมมติได้ 100 META_MONEY จากการชนะบอส
             PlayerPrefs.SetInt("META_MONEY", total);
             PlayerPrefs.Save();
-
+            Destroy(GameObject.FindWithTag("Player")); // 🔥 ทำลายตัวละครผู้เล่น
             EndGameData.instance.isWin = true;
             SceneManager.LoadScene("EndGame");
         }

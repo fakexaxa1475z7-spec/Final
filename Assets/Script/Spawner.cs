@@ -12,6 +12,7 @@ public class Spawner : MonoBehaviour
 {
     [Header("Enemy List")]
     public List<EnemyType> enemies;
+    public GameObject bossPrefab;
 
     [Header("Spawn Settings")]
     public float spawnRate = 2f;
@@ -29,6 +30,14 @@ public class Spawner : MonoBehaviour
     public bool spawnOnEdge = false; // true = spawn ขอบแมพ
 
     float timer;
+
+    void Start()
+    {
+        if (GameTimer.isBossLevel)
+        {
+            Instantiate(bossPrefab, GetSpawnPosition(), Quaternion.identity);
+        }
+    }
 
     void FindPlayer()
     {

@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 
 public class PlayerExp : MonoBehaviour
 {
@@ -6,23 +7,25 @@ public class PlayerExp : MonoBehaviour
 
     public int currentExp = 0;
 
+    public Action<int> OnExpChanged; // 🔥 เพิ่มบรรทัดนี้
+
     void Awake()
     {
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject); // 🔥 ข้าม scene
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
             Destroy(gameObject);
         }
-        ResetExp();
     }
 
     public void AddExp(int amount)
     {
         currentExp += amount;
+        OnExpChanged?.Invoke(currentExp); // 🔥 ยิง event
     }
 
     public bool SpendExp(int amount)
@@ -30,6 +33,7 @@ public class PlayerExp : MonoBehaviour
         if (currentExp >= amount)
         {
             currentExp -= amount;
+            OnExpChanged?.Invoke(currentExp); // 🔥 ยิง event
             return true;
         }
         return false;
@@ -38,5 +42,6 @@ public class PlayerExp : MonoBehaviour
     public void ResetExp()
     {
         currentExp = 0;
+        OnExpChanged?.Invoke(currentExp); // 🔥 ยิง event
     }
 }

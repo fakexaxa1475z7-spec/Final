@@ -12,7 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 197d0acfe593e8a45ae1d6c4de111991, type: 3}
   m_Name: U_Dmg01
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeData
-  upgradeName: Dmg +2
-  damage: 2
+  upgradeName: Dmg +1
+  damage: 1
   attackSpeed: 0
   hp: 0
+  critRate: 0
+  critDamage: 0
+  moveSpeed: 0
+  hpRegen: 0
+  cost: 0

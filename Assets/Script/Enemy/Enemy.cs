@@ -5,15 +5,17 @@ public class Enemy : MonoBehaviour
     public float speed = 2f;
 
     Transform player;
-    AutoShoot shooter;
 
     void Start()
     {
-        // 🔥 cache shooter
-        shooter = FindObjectOfType<AutoShoot>();
+        if (PlayerWeapon.instance != null)
+            PlayerWeapon.instance.AddEnemy(transform);
+    }
 
-        if (shooter != null)
-            shooter.AddEnemy(transform);
+    void OnDestroy()
+    {
+        if (PlayerWeapon.instance != null)
+            PlayerWeapon.instance.RemoveEnemy(transform);
     }
 
     void Update()
@@ -29,7 +31,7 @@ public class Enemy : MonoBehaviour
 
     void FindPlayer()
     {
-        // 🔥 ใช้ instance ถ้ามี
+        // 🔥 ใช้ instance
         if (player == null && PlayerStats.instance != null)
         {
             player = PlayerStats.instance.transform;
@@ -50,15 +52,6 @@ public class Enemy : MonoBehaviour
         {
             Vector2 push = (transform.position - col.transform.position).normalized;
             transform.position += (Vector3)(push * 0.5f * Time.deltaTime);
-        }
-    }
-
-    void OnDestroy()
-    {
-        // 🔥 กัน null ตอนเปลี่ยน scene
-        if (shooter != null)
-        {
-            shooter.RemoveEnemy(transform);
         }
     }
 }

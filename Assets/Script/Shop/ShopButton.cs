@@ -1,4 +1,3 @@
-using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,18 +7,16 @@ public class ShopButton : MonoBehaviour
     public TextMeshProUGUI text;
     public Button button;
 
+    public int index;
+    public bool isLocked = false;
+    public GameObject lockIcon;
+
     UpgradeData upgrade;
     int cost;
-    ShopManager shop;
+    UpgradeShopManager shop;
 
-    public int index; // ช่องที่เท่าไหร่
-    public bool isLocked = false;
-
-    public GameObject lockIcon; // รูป 🔒
-
-    public void Setup(UpgradeData up, int price, ShopManager m)
+    public void Setup(UpgradeData up, int price, UpgradeShopManager m)
     {
-        // ❗ ถ้าล็อกอยู่ → ไม่เปลี่ยนของ
         if (isLocked) return;
 
         upgrade = up;
@@ -27,12 +24,12 @@ public class ShopButton : MonoBehaviour
         shop = m;
 
         text.text = up.upgradeName + "\nCost: " + cost;
-        button.interactable = true;
+        Refresh();
     }
 
     public void OnClick()
     {
-        shop.BuyUpgrade(upgrade, cost, this);
+        shop.Buy(upgrade, cost, this);
     }
 
     public void Disable()
@@ -41,17 +38,18 @@ public class ShopButton : MonoBehaviour
         text.text += "\nBOUGHT";
     }
 
-    // 🔒 กดล็อก
     public void ToggleLock()
     {
         isLocked = !isLocked;
-
-        // 🔒 เปิด/ปิดไอคอน
         lockIcon.SetActive(isLocked);
 
-        // 💾 เซฟข้าม scene
-        ShopData.lockedSlots[index] = isLocked;
+        ShopData.upgradeLocked[index] = isLocked;
+    }
 
-        Debug.Log(isLocked ? "LOCKED" : "UNLOCKED");
+    public void Refresh()
+    {
+        if (upgrade == null) return;
+
+        button.interactable = PlayerExp.instance.currentExp >= cost;
     }
 }
