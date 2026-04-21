@@ -22,5 +22,5 @@ MonoBehaviour:
   critDamage: 2
   moveSpeed: 5
   hpRegen: 0.1
-  startingWeapon: {fileID: 11400000, guid: cc5ecb340f1fbd24b91e2757ba1d9e18, type: 2}
+  startingWeapon: {fileID: 11400000, guid: 74dceb9816356214c837d64d89e066f5, type: 2}
   unlockCost: 0
