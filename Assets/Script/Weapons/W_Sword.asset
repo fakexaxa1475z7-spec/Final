@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: W_Sword
   m_EditorClassIdentifier: Assembly-CSharp::WeaponData
   weaponName: Sword
+  weaponType: 2
   bulletPrefab: {fileID: 2945386948711080000, guid: 315c5143e58dcc749a305bb9abcbca1d, type: 3}
+  weaponModel: {fileID: 0}
   fireRate: 1
   damage: 3
   cost: 10
+  pelletCount: 0
+  spread: 0

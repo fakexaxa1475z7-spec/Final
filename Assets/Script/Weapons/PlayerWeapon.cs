@@ -10,6 +10,8 @@ public class PlayerWeapon : MonoBehaviour
 
     public int maxSlots = 2;
 
+    List<GameObject> weaponObjects = new List<GameObject>();
+
     void Awake()
     {
         if (instance == null)
@@ -43,6 +45,8 @@ public class PlayerWeapon : MonoBehaviour
             }
 
             InitWeapons();
+
+            SyncWeaponModels();
         }
     }
 
@@ -70,6 +74,8 @@ public class PlayerWeapon : MonoBehaviour
     {
         if (PlayerStats.instance == null) return;
 
+        UpdateWeaponRotation();
+
         for (int i = 0; i < weapons.Count; i++)
         {
             var slot = weapons[i];
@@ -90,10 +96,70 @@ public class PlayerWeapon : MonoBehaviour
 
     void Shoot(WeaponData weapon, int index)
     {
-        var enemies = PlayerWeapon.instance.enemies;
-        if (enemies.Count == 0) return;
+        switch (weapon.weaponType)
+        {
+            case WeaponType.Gun:
+                ShootGun(weapon, index);
+                break;
 
-        // 🔥 ใช้ Transform แทน GameObject
+            case WeaponType.Shotgun:
+                ShootShotgun(weapon, index);
+                break;
+
+            case WeaponType.Sword:
+                ShootSword(weapon, index);
+                break;
+        }
+    }
+    void ShootGun(WeaponData weapon, int index)
+    {
+        var target = GetTarget(index);
+        if (target == null) return;
+
+        Vector2 dir = (target.position - transform.position).normalized;
+
+        var b = Instantiate(weapon.bulletPrefab, transform.position, Quaternion.identity)
+            .GetComponent<Bullet>();
+
+        int dmg = weapon.damage + PlayerStats.instance.damage;
+        b.Init(dir, dmg);
+    }
+    void ShootShotgun(WeaponData weapon, int index)
+    {
+        var target = GetTarget(index);
+        if (target == null) return;
+
+        Vector2 baseDir = (target.position - transform.position).normalized;
+
+        for (int i = 0; i < weapon.pelletCount; i++)
+        {
+            float angle = Random.Range(-weapon.spread, weapon.spread);
+            Vector2 dir = Quaternion.Euler(0, 0, angle) * baseDir;
+
+            var b = Instantiate(weapon.bulletPrefab, transform.position, Quaternion.identity)
+                .GetComponent<Bullet>();
+
+            int dmg = weapon.damage + PlayerStats.instance.damage;
+            b.Init(dir, dmg);
+        }
+    }
+    void ShootSword(WeaponData weapon, int index)
+    {
+        var target = GetTarget(index);
+        if (target == null) return;
+
+        Vector2 dir = (target.position - transform.position).normalized;
+
+        var s = Instantiate(weapon.bulletPrefab, transform.position, Quaternion.identity)
+            .GetComponent<Bullet>();
+
+        int dmg = weapon.damage + PlayerStats.instance.damage;
+        s.Init(dir, dmg);
+    }
+    Transform GetTarget(int index)
+    {
+        if (enemies.Count == 0) return null;
+
         List<Transform> sorted = new List<Transform>(enemies);
 
         sorted.Sort((a, b) =>
@@ -101,20 +167,7 @@ public class PlayerWeapon : MonoBehaviour
             .CompareTo(Vector2.Distance(transform.position, b.position))
         );
 
-        // 🔥 ยิงคนละเป้า
-        Transform target = sorted[Mathf.Min(index, sorted.Count - 1)];
-
-        Vector2 dir = (target.position - transform.position).normalized;
-
-        // 🔥 ยิงคนละตำแหน่ง
-        Vector3 offset = (index == 0) ? Vector3.left * 0.3f : Vector3.right * 0.3f;
-
-        Bullet b = Instantiate(weapon.bulletPrefab, transform.position + offset, Quaternion.identity)
-            .GetComponent<Bullet>();
-
-        int dmg = weapon.damage + PlayerStats.instance.damage;
-
-        b.Init(dir, dmg);
+        return sorted[Mathf.Min(index, sorted.Count - 1)];
     }
 
     // 🔫 ใส่อาวุธ
@@ -135,8 +188,11 @@ public class PlayerWeapon : MonoBehaviour
             Debug.Log("🔁 Replaced slot 1 with: " + weapon.weaponName);
         }
 
+        SyncWeaponModels();
+
         Debug.Log("Equipped: " + weapon.weaponName);
     }
+
     public List<Transform> enemies = new List<Transform>();
 
     public void AddEnemy(Transform e)
@@ -149,5 +205,61 @@ public class PlayerWeapon : MonoBehaviour
     {
         if (enemies.Contains(e))
             enemies.Remove(e);
+    }
+
+    void SyncWeaponModels()
+    {
+        foreach (var obj in weaponObjects)
+        {
+            if (obj != null)
+                Destroy(obj);
+        }
+
+        weaponObjects.Clear();
+
+        for (int i = 0; i < weapons.Count; i++)
+        {
+            SpawnWeaponModel(weapons[i].weapon, i);
+        }
+    }
+    void SpawnWeaponModel(WeaponData weapon, int index)
+    {
+        if (weapon.weaponModel == null) return;
+
+        GameObject obj = Instantiate(weapon.weaponModel, transform);
+
+        // 🔥 ซ้าย / ขวา
+        Vector3 offset = Vector3.zero;
+
+        if (index == 0) offset = new Vector3(-0.5f, 0, 0); // ซ้าย
+        else if (index == 1) offset = new Vector3(0.5f, 0, 0); // ขวา
+
+        obj.transform.localPosition = offset;
+
+        // 🔥 scale กันกลับด้าน
+        obj.transform.localScale = Vector3.one;
+
+        // เก็บไว้
+        if (weaponObjects.Count <= index)
+            weaponObjects.Add(obj);
+        else
+            weaponObjects[index] = obj;
+    }
+
+    void UpdateWeaponRotation()
+    {
+        if (enemies.Count == 0) return;
+
+        Transform target = enemies[0];
+
+        foreach (var obj in weaponObjects)
+        {
+            if (obj == null) continue;
+
+            Vector2 dir = (target.position - obj.transform.position).normalized;
+
+            float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+            obj.transform.rotation = Quaternion.Euler(0, 0, angle);
+        }
     }
 }

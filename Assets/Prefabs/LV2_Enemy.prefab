@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 3521460007835460174}
   - component: {fileID: -6327616477312146882}
   m_Layer: 0
-  m_Name: LV1_Enemy
+  m_Name: LV2_Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -86,7 +86,7 @@ SpriteRenderer:
   m_SortingLayer: 3
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -9065019941667601525, guid: 35be666490a179145b63ded5ec71eefd, type: 3}
+  m_Sprite: {fileID: -5175349476446173853, guid: 88d43b26d97d75e4fa7880c1cdf5f6e2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -130,17 +130,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.4631281, y: 0}
+  m_Offset: {x: 0.0008020401, y: 0.529758}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.7568969, y: 0.81000006}
+    oldSize: {x: 1.0666667, y: 1.7668982}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.8676777, y: 0.8739786}
+  m_Size: {x: 0.8802166, y: 0.7172456}
   m_EdgeRadius: 0
 --- !u!114 &8751758615063147643
 MonoBehaviour:
@@ -193,7 +193,7 @@ Animator:
   m_GameObject: {fileID: 147342431280183300}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2e170acb6fe513640b999d51c71460a2, type: 2}
+  m_Controller: {fileID: 9100000, guid: 4d354c811c289514ba459db5cb403c00, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

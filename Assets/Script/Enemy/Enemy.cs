@@ -26,6 +26,11 @@ public class Enemy : MonoBehaviour
 
         Vector2 dir = (player.position - transform.position).normalized;
 
+        if (dir.x > 0)
+            transform.localScale = new Vector3(-1, 1, 1);   // หันขวา
+        else if (dir.x < 0)
+            transform.localScale = new Vector3(1, 1, 1);  // หันซ้าย
+
         transform.position += (Vector3)(dir * speed * Time.deltaTime);
     }
 
