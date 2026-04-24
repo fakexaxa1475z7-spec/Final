@@ -337,7 +337,7 @@ GameObject:
   - component: {fileID: 8047823030613094894}
   m_Layer: 0
   m_Name: Mage
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -352,7 +352,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.9405043, y: 1.7191813, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5637463061806377761}
@@ -403,8 +403,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1469910971
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 4288874580203222471, guid: 8ac5582bd427d2942984e8ea36f384b2, type: 3}
@@ -455,7 +455,6 @@ MonoBehaviour:
     m_Extent: {x: 9.884598, y: 8.167767, z: 0}
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
-  m_BoundsMode: 0
 --- !u!95 &8047823030613094894
 Animator:
   serializedVersion: 7
