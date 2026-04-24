@@ -57,10 +57,10 @@ public class GameTimer : MonoBehaviour
         {
             isGameOver = true;
 
-            total += 100; // 🔥 สมมติได้ 100 META_MONEY จากการชนะบอส
+            total += 100;
             PlayerPrefs.SetInt("META_MONEY", total);
             PlayerPrefs.Save();
-            Destroy(GameObject.FindWithTag("Player")); // 🔥 ทำลายตัวละครผู้เล่น
+            Destroy(GameObject.FindWithTag("Player"));
             EndGameData.instance.isWin = true;
             SceneManager.LoadScene("EndGame");
         }

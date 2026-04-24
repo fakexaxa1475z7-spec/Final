@@ -219,7 +219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dce5781060e24b14da4f18eeeea00938, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
-  hp: 300
+  hp: 2000
   expPrefab: {fileID: 8626181687693994676, guid: a19b507626584f34cb5598e3cd66b4c4, type: 3}
   damageTextPrefab: {fileID: 6382086777552593162, guid: 9c82425cd03226445a60f422bdcbfa7f, type: 3}
   anim: {fileID: 2194482839638102376}

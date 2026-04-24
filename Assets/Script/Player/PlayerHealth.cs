@@ -19,6 +19,8 @@ public class PlayerHealth : MonoBehaviour
     [Header("SFX")]
     public AudioClip hurtSound;
 
+    int total = 0;
+
     void Awake()
     {
         if (instance == null)
@@ -35,6 +37,7 @@ public class PlayerHealth : MonoBehaviour
     {
         sr = GetComponent<SpriteRenderer>();
         audioSource = GetComponent<AudioSource>();
+        total = PlayerPrefs.GetInt("META_MONEY", 0);
 
         maxHP = PlayerStats.instance.maxHP;
         currentHP = maxHP;
@@ -109,6 +112,10 @@ public class PlayerHealth : MonoBehaviour
 
     void Die()
     {
+        total += 1;
+        PlayerPrefs.SetInt("META_MONEY", total);
+        PlayerPrefs.Save();
+
         Debug.Log("Player Dead");
         EndGameData.instance.isWin = false;
 

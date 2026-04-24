@@ -12,12 +12,20 @@ public class EndGameData : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject); // 🔥 ข้าม scene
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
             Destroy(gameObject);
         }
-        exp = 100;
+        if (isWin)
+        {
+            exp = 100;
+        }
+        else
+        {     
+            exp = 1; 
+        }
+        
     }
 }

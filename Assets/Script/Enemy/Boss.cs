@@ -19,7 +19,6 @@ public class Boss : MonoBehaviour
     [Header("Stats")]
     public float speed = 2f;
     public int damage = 3;
-    int total = 0;
 
     [Header("Attack")]
     public GameObject bulletPrefab;
@@ -42,7 +41,6 @@ public class Boss : MonoBehaviour
     {
         anim = GetComponentInChildren<Animator>();
         sr = GetComponent<SpriteRenderer>();
-        total = PlayerPrefs.GetInt("META_MONEY", 0);
 
         if (PlayerWeapon.instance != null)
             PlayerWeapon.instance.AddEnemy(transform);

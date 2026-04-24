@@ -138,7 +138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   hp: 30
-  expPrefab: {fileID: 8626181687693994676, guid: 19c23426ddc1ff740ae58ed2a1c2e77b, type: 3}
+  expPrefab: {fileID: 8626181687693994676, guid: 01fa0f1685a7bfa489f66f9456256f21, type: 3}
   damageTextPrefab: {fileID: 6382086777552593162, guid: 9c82425cd03226445a60f422bdcbfa7f, type: 3}
   anim: {fileID: 2105059522302711392}
   isBoss: 0

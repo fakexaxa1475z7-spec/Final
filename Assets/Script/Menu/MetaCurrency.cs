@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using UnityEngine.SceneManagement;
 
 public class MetaCurrency : MonoBehaviour
 {
@@ -21,6 +22,22 @@ public class MetaCurrency : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        total = PlayerPrefs.GetInt("META_MONEY", 0);
+        OnMoneyChanged?.Invoke(total);
     }
 
     public void Add(int amount)

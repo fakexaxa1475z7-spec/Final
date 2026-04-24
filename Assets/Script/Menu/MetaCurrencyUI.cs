@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MetaCurrencyUI : MonoBehaviour
 {
@@ -11,6 +12,19 @@ public class MetaCurrencyUI : MonoBehaviour
 
         if (MetaCurrency.instance != null)
             MetaCurrency.instance.OnMoneyChanged += OnMoneyChanged;
+    }
+    void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        UpdateUI();
     }
 
     void OnDestroy()

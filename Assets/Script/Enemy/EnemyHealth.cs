@@ -15,9 +15,12 @@ public class EnemyHealth : MonoBehaviour
 
     public bool isBoss = false;
 
+    int total = 0;
+
     void Start()
     {
         sr = GetComponent<SpriteRenderer>();
+        total = PlayerPrefs.GetInt("META_MONEY", 0);
     }
 
     public void TakeDamage(int dmg, bool isCrit = false)
@@ -88,15 +91,14 @@ public class EnemyHealth : MonoBehaviour
 
         if (isBoss)
         {
-            int total = PlayerPrefs.GetInt("META_MONEY", 0);
             total += 100;
-
             PlayerPrefs.SetInt("META_MONEY", total);
             PlayerPrefs.Save();
 
-            Destroy(GameObject.FindWithTag("Player"));
 
             EndGameData.instance.isWin = true;
+            Destroy(GameObject.FindWithTag("Player"));
+            
             UnityEngine.SceneManagement.SceneManager.LoadScene("EndGame");
         }
         else
