@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: W_Sniper
   m_EditorClassIdentifier: Assembly-CSharp::WeaponData
   weaponName: Sniper Rifle
+  icon: {fileID: 67142164, guid: e7791e7c07a37c14abccfcd74560157f, type: 3}
   weaponType: 0
   bulletPrefab: {fileID: 4727566914043680897, guid: 84a052cdd8c938440a1faf94398d87d8, type: 3}
   weaponModel: {fileID: 3457549335224409496, guid: 6e67c93edf0cce84bb19b441750e8c35, type: 3}

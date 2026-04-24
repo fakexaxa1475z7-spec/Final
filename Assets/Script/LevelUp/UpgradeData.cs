@@ -5,6 +5,8 @@ public class UpgradeData : ScriptableObject
 {
     public string upgradeName;
 
+    public Sprite icon;
+
     public int damage;
     public float attackSpeed;
     public int hp;

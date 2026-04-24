@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 197d0acfe593e8a45ae1d6c4de111991, type: 3}
+  m_Name: S_Dmg 1
+  m_EditorClassIdentifier: Assembly-CSharp::UpgradeData
+  upgradeName: Dmg +1
+  icon: {fileID: 1102283050913005023, guid: 0593994f5bb68784bb191e8a3ce11318, type: 3}
+  damage: 1
+  attackSpeed: 0
+  hp: 0
+  critRate: 0
+  critDamage: 0
+  moveSpeed: 0
+  hpRegen: 0
+  cost: 40

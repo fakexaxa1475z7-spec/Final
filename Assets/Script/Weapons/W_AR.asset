@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: W_AR
   m_EditorClassIdentifier: Assembly-CSharp::WeaponData
   weaponName: Assult Rifle
+  icon: {fileID: 1973648738, guid: e7791e7c07a37c14abccfcd74560157f, type: 3}
   weaponType: 0
   bulletPrefab: {fileID: 4727566914043680897, guid: 84a052cdd8c938440a1faf94398d87d8, type: 3}
   weaponModel: {fileID: 3457549335224409496, guid: 830de1975d1fe70459d97ac0f4565eee, type: 3}

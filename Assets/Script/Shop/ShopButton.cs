@@ -7,6 +7,8 @@ public class ShopButton : MonoBehaviour
     public TextMeshProUGUI text;
     public Button button;
 
+    public Image iconImage; // ⭐ เพิ่มตรงนี้
+
     public int index;
     public bool isLocked = false;
     public GameObject lockIcon;
@@ -24,6 +26,14 @@ public class ShopButton : MonoBehaviour
         shop = m;
 
         text.text = up.upgradeName + "\nCost: " + cost;
+
+        // ⭐ ใส่รูปตรงนี้
+        if (iconImage != null && up.icon != null)
+        {
+            iconImage.sprite = up.icon;
+            iconImage.enabled = true;
+        }
+
         Refresh();
     }
 

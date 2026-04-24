@@ -7,18 +7,27 @@ public class ExpPickup : MonoBehaviour
     public float attractRange = 2f;
 
     Transform player;
+    AudioSource audioSource;
+
+    bool isCollected = false; // 🔥 กันเก็บซ้ำ
 
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        GameObject p = GameObject.FindGameObjectWithTag("Player");
+
+        if (p != null)
+            player = p.transform;
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
     {
-        // 🔵 วิ่งเข้าหาผู้เล่น (แบบดูด)
+        if (player == null || isCollected) return;
+
         float dist = Vector2.Distance(transform.position, player.position);
 
-        if (dist < attractRange) // ระยะดูด
+        if (dist < attractRange)
         {
             transform.position = Vector2.MoveTowards(
                 transform.position,
@@ -30,10 +39,27 @@ public class ExpPickup : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
+        if (isCollected) return; // 🔥 กันซ้ำ
+
         if (col.CompareTag("Player"))
         {
-            col.GetComponent<PlayerExp>().AddExp(expValue);
-            Destroy(gameObject);
+            isCollected = true; // 🔥 lock ทันที
+
+            col.GetComponent<PlayerExp>()?.AddExp(expValue);
+
+            if (audioSource != null)
+            {
+                audioSource.Play();
+                Destroy(gameObject, audioSource.clip.length);
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+
+            // 🔥 ปิด collider กัน trigger ซ้ำ
+            GetComponent<Collider2D>().enabled = false;
+            gameObject.GetComponent<SpriteRenderer>().enabled = false;
         }
     }
 }

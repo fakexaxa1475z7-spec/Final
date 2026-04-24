@@ -10,6 +10,8 @@ public class ShopWeaponButton : MonoBehaviour
     public TextMeshProUGUI costText;
     public Button button;
 
+    public Image iconImage; // ⭐ รูปปืน
+
     public int index;
     public bool isLocked = false;
     public GameObject lockIcon;
@@ -52,25 +54,51 @@ public class ShopWeaponButton : MonoBehaviour
 
         nameText.text = weapon.weaponName;
 
+        // ⭐ ใส่ icon
+        if (iconImage != null && weapon.icon != null)
+        {
+            iconImage.sprite = weapon.icon;
+            iconImage.enabled = true;
+        }
+
+        // 🔒 lock
+        lockIcon.SetActive(isLocked);
+
+        if (isLocked)
+        {
+            button.interactable = false;
+            if (iconImage != null) iconImage.enabled = false;
+            costText.text = "LOCKED";
+            return;
+        }
+
+        // 💰 ซื้อแล้ว
         if (isBought)
         {
             costText.text = "BOUGHT";
             button.interactable = false;
+
+            if (iconImage != null)
+                iconImage.color = Color.gray;
+
             return;
         }
 
+        // 💰 ราคาปกติ
         costText.text = weapon.cost.ToString();
 
         button.interactable =
             PlayerExp.instance != null &&
             PlayerExp.instance.currentExp >= weapon.cost;
 
-        lockIcon.SetActive(isLocked);
+        // รีเซ็ตสี icon
+        if (iconImage != null)
+            iconImage.color = Color.white;
     }
 
     public void OnClick()
     {
-        if (weapon == null || isBought) return;
+        if (weapon == null || isBought || isLocked) return;
 
         if (PlayerExp.instance != null &&
             PlayerExp.instance.SpendExp(weapon.cost))
@@ -102,6 +130,8 @@ public class ShopWeaponButton : MonoBehaviour
         lockIcon.SetActive(isLocked);
 
         ShopData.weaponLocked[index] = isLocked;
+
+        Refresh();
     }
 
     public void Refresh()

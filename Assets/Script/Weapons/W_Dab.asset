@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: W_Dab
   m_EditorClassIdentifier: Assembly-CSharp::WeaponData
   weaponName: Dab
+  icon: {fileID: -241364103373754060, guid: e7791e7c07a37c14abccfcd74560157f, type: 3}
   weaponType: 2
   bulletPrefab: {fileID: 2945386948711080000, guid: 315c5143e58dcc749a305bb9abcbca1d, type: 3}
   weaponModel: {fileID: 3457549335224409496, guid: 8d1594028c1dffa479ce3db69c464759, type: 3}

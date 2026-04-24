@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: W_HG
   m_EditorClassIdentifier: Assembly-CSharp::WeaponData
   weaponName: Hand Gun
+  icon: {fileID: 2406739, guid: e7791e7c07a37c14abccfcd74560157f, type: 3}
   weaponType: 0
   bulletPrefab: {fileID: 4727566914043680897, guid: 27bbccb9478723343b95fcf343f10e6b, type: 3}
   weaponModel: {fileID: 117240083414622815, guid: 4de8f6fbf898dac49be145902b07776c, type: 3}

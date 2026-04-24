@@ -2,7 +2,6 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-
 public class PlayerHealth : MonoBehaviour
 {
     public static PlayerHealth instance;
@@ -13,7 +12,12 @@ public class PlayerHealth : MonoBehaviour
 
     public float invincibleTime = 1f;
     bool isInvincible = false;
+
     SpriteRenderer sr;
+    AudioSource audioSource;
+
+    [Header("SFX")]
+    public AudioClip hurtSound;
 
     void Awake()
     {
@@ -30,10 +34,12 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         sr = GetComponent<SpriteRenderer>();
+        audioSource = GetComponent<AudioSource>();
 
-        maxHP = PlayerStats.instance.maxHP; // 🔥 ดึงจาก stats
+        maxHP = PlayerStats.instance.maxHP;
         currentHP = maxHP;
     }
+
     void Update()
     {
         RegenHP();
@@ -53,9 +59,7 @@ public class PlayerHealth : MonoBehaviour
             int healAmount = Mathf.FloorToInt(regen);
 
             if (healAmount > 0)
-            {
                 TakeHeal(healAmount);
-            }
 
             regenTimer = 0f;
         }
@@ -73,7 +77,11 @@ public class PlayerHealth : MonoBehaviour
         if (isInvincible) return;
 
         currentHP -= dmg;
+
+        PlayHurtSound(); // 🔥 เล่นเสียงเจ็บ
+
         Debug.Log("HP: " + currentHP);
+
         StartCoroutine(Flash());
 
         if (currentHP <= 0)
@@ -86,7 +94,7 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    System.Collections.IEnumerator Invincible()
+    IEnumerator Invincible()
     {
         isInvincible = true;
         yield return new WaitForSeconds(invincibleTime);
@@ -97,38 +105,42 @@ public class PlayerHealth : MonoBehaviour
     {
         currentHP += amount;
         if (currentHP > maxHP) currentHP = maxHP;
-
-        Debug.Log("Heal: " + currentHP);
     }
 
     void Die()
     {
         Debug.Log("Player Dead");
         EndGameData.instance.isWin = false;
-        Destroy(this);
+
+        Destroy(gameObject);
         SceneManager.LoadScene("EndGame");
     }
+
+    void PlayHurtSound()
+    {
+        if (audioSource != null && hurtSound != null)
+            audioSource.PlayOneShot(hurtSound);
+    }
+
 
     public void SetMaxHP(int newMaxHP, bool healFull = true)
     {
         int diff = newMaxHP - maxHP;
-
         maxHP = newMaxHP;
 
         if (healFull)
         {
-            currentHP = maxHP; // เติมเต็ม
+            currentHP = maxHP;
         }
         else
         {
-            currentHP += diff; // เพิ่มตามส่วน
+            currentHP += diff;
             if (currentHP > maxHP) currentHP = maxHP;
         }
-
-        Debug.Log("HP Updated: " + currentHP + "/" + maxHP);
     }
+
     public float GetHPPercent()
     {
         return (float)currentHP / maxHP;
-    }   
+    }
 }

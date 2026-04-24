@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: W_Ngao
   m_EditorClassIdentifier: Assembly-CSharp::WeaponData
   weaponName: Ngao
+  icon: {fileID: -1436162442, guid: e7791e7c07a37c14abccfcd74560157f, type: 3}
   weaponType: 2
   bulletPrefab: {fileID: 2945386948711080000, guid: 315c5143e58dcc749a305bb9abcbca1d, type: 3}
   weaponModel: {fileID: 3457549335224409496, guid: 13307998aef1e514ebaaf2b6661f737c, type: 3}

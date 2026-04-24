@@ -271,6 +271,94 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: NgaoS
+      rect:
+        serializedVersion: 2
+        x: 1503
+        y: 153
+        width: 545
+        height: 740
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 770a4ee6c82ae0d46b969476f7c9f613
+      internalID: -1436162442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HGS
+      rect:
+        serializedVersion: 2
+        x: 1177
+        y: 931
+        width: 296
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93e8638a922928e4d89e27aaecc5d4b7
+      internalID: 2406739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ARS
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 833
+        width: 467
+        height: 466
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5bbd48c5d2c2684eb257873db8d130a
+      internalID: 1973648738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SniS
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 121
+        width: 790
+        height: 734
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a9b01afc93027a4996875ebea764390
+      internalID: 67142164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -286,9 +374,13 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       AR: 5596705706566435318
+      ARS: 1973648738
       Dab: -241364103373754060
       HG: -7839707315157654231
+      HGS: 2406739
       Ngao: 3897219761059053093
+      NgaoS: -1436162442
+      SniS: 67142164
       Sniper: 1286739749284393386
       Sword: -5094911981126775481
       TUTI: 1034402263689940623

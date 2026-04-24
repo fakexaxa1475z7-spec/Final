@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: W_TUTI
   m_EditorClassIdentifier: Assembly-CSharp::WeaponData
   weaponName: Uzi
+  icon: {fileID: 1034402263689940623, guid: e7791e7c07a37c14abccfcd74560157f, type: 3}
   weaponType: 0
   bulletPrefab: {fileID: 4727566914043680897, guid: 27bbccb9478723343b95fcf343f10e6b, type: 3}
   weaponModel: {fileID: 3457549335224409496, guid: 06932f06fbeee924ebb6630b955e664f, type: 3}
