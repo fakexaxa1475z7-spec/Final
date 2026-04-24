@@ -16,12 +16,12 @@ MonoBehaviour:
   characterID: C_Golem
   characterName: Golem
   prefab: {fileID: 2865648199369052424, guid: 4005c90aca55ed24dbcf690e698e1efa, type: 3}
-  maxHP: 6
+  maxHP: 15
   damage: 0
   attackSpeed: 1.5
   critRate: 0.05
   critDamage: 1.5
-  moveSpeed: 4
+  moveSpeed: 2
   hpRegen: 0.1
   startingWeapon: {fileID: 11400000, guid: 07b497aad9235de449c2652eceea432c, type: 2}
   unlockCost: 100
