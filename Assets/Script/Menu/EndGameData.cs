@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EndGameData : MonoBehaviour
 {
@@ -17,15 +18,27 @@ public class EndGameData : MonoBehaviour
         else
         {
             Destroy(gameObject);
-        }
+        }       
+    }
+    void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
         if (isWin)
         {
             exp = 100;
         }
         else
-        {     
-            exp = 1; 
+        {
+            exp = 1;
         }
-        
     }
 }
