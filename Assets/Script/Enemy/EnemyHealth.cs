@@ -11,6 +11,9 @@ public class EnemyHealth : MonoBehaviour
     SpriteRenderer sr;
 
     public GameObject damageTextPrefab;
+    public Animator anim;
+
+    public bool isBoss = false;
 
     void Start()
     {
@@ -62,10 +65,46 @@ public class EnemyHealth : MonoBehaviour
         if (isDead) return;
         isDead = true;
 
-        // 💎 ดรอป EXP
-        if (expPrefab != null)
+        // 🔥 เล่น animation
+        if (anim != null)
         {
-            Instantiate(expPrefab, transform.position, Quaternion.identity);
+            anim.SetTrigger("Die");
+        }
+
+        // 🔥 ปิด collider กันโดนซ้ำ
+        var col = GetComponent<Collider2D>();
+        if (col != null) col.enabled = false;
+
+        // 🔥 หยุดการเคลื่อนที่
+        var rb = GetComponent<Rigidbody2D>();
+        if (rb != null) rb.linearVelocity = Vector2.zero;
+
+        // 🔥 delay แล้วค่อยหาย
+        StartCoroutine(DieDelay());
+    }
+    IEnumerator DieDelay()
+    {
+        yield return new WaitForSeconds(0.5f); // ⏳ ให้ animation เล่น
+
+        if (isBoss)
+        {
+            int total = PlayerPrefs.GetInt("META_MONEY", 0);
+            total += 100;
+
+            PlayerPrefs.SetInt("META_MONEY", total);
+            PlayerPrefs.Save();
+
+            Destroy(GameObject.FindWithTag("Player"));
+
+            EndGameData.instance.isWin = true;
+            UnityEngine.SceneManagement.SceneManager.LoadScene("EndGame");
+        }
+        else
+        {
+            if (expPrefab != null)
+            {
+                Instantiate(expPrefab, transform.position, Quaternion.identity);
+            }
         }
 
         Destroy(gameObject);

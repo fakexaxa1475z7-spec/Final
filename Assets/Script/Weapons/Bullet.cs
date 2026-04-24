@@ -37,7 +37,7 @@ public class Bullet : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (!col.CompareTag("Enemy")) return;
+        if (!col.CompareTag("Enemy") && !col.CompareTag("Boss")) return;
 
         // 🔥 กันตีซ้ำ
         if (hitTargets.Contains(col)) return;

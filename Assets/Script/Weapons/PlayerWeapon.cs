@@ -54,9 +54,11 @@ public class PlayerWeapon : MonoBehaviour
     {
         if (weapons.Count > 0) return;
 
+        if (PlayerStats.selectedCharacter == null) return;
+
         var start = PlayerStats.selectedCharacter.startingWeapon;
 
-        if (start != null && !HasWeapon(start))
+        if (start != null)
         {
             Equip(start);
         }
@@ -163,9 +165,22 @@ public class PlayerWeapon : MonoBehaviour
         List<Transform> sorted = new List<Transform>(enemies);
 
         sorted.Sort((a, b) =>
-            Vector2.Distance(transform.position, a.position)
-            .CompareTo(Vector2.Distance(transform.position, b.position))
-        );
+        {
+            if (a == null || b == null) return 0;
+
+            // 🔥 ให้ Boss priority สูงสุด
+            bool aBoss = a.CompareTag("Boss");
+            bool bBoss = b.CompareTag("Boss");
+
+            if (aBoss && !bBoss) return -1; // a มาก่อน
+            if (!aBoss && bBoss) return 1;  // b มาก่อน
+
+            // 🔥 ถ้าเป็นประเภทเดียวกัน → วัดระยะ
+            float distA = Vector2.Distance(transform.position, a.position);
+            float distB = Vector2.Distance(transform.position, b.position);
+
+            return distA.CompareTo(distB);
+        });
 
         return sorted[Mathf.Min(index, sorted.Count - 1)];
     }
@@ -259,7 +274,18 @@ public class PlayerWeapon : MonoBehaviour
             Vector2 dir = (target.position - obj.transform.position).normalized;
 
             float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+            angle += 180f;
             obj.transform.rotation = Quaternion.Euler(0, 0, angle);
+
+            // 🔥 flip ซ้ายขวา
+            Vector3 scale = obj.transform.localScale;
+
+            if (dir.x < 0)
+                scale.y = Mathf.Abs(scale.y); // กลับด้าน
+            else
+                scale.y = -Mathf.Abs(scale.y);  // ปกติ
+
+            obj.transform.localScale = scale;
         }
     }
 }

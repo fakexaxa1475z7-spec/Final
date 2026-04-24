@@ -18,8 +18,6 @@ public class Boss : MonoBehaviour
 
     [Header("Stats")]
     public float speed = 2f;
-    public int maxHP = 200;
-    int currentHP;
     public int damage = 3;
     int total = 0;
 
@@ -36,20 +34,34 @@ public class Boss : MonoBehaviour
     [Header("Phase")]
     bool phase2 = false;
 
+    Animator anim;
+    SpriteRenderer sr;
+    public Transform pivot;
+
     void Start()
     {
+        anim = GetComponentInChildren<Animator>();
+        sr = GetComponent<SpriteRenderer>();
         total = PlayerPrefs.GetInt("META_MONEY", 0);
 
-        currentHP = maxHP;
+        if (PlayerWeapon.instance != null)
+            PlayerWeapon.instance.AddEnemy(transform);
+
         currentState = State.Chase;
 
         FindPlayer();
+    }
+    void OnDestroy()
+    {
+        if (PlayerWeapon.instance != null)
+            PlayerWeapon.instance.RemoveEnemy(transform);
     }
 
     void Update()
     {
         if (player == null) FindPlayer();
         if (player == null) return;
+        Flip();
 
         switch (currentState)
         {
@@ -65,10 +77,15 @@ public class Boss : MonoBehaviour
                 break;
         }
 
+        float moveSpeed = (player != null)
+    ? Vector2.Distance(transform.position, player.position)
+    : 0;
+
+        anim.SetFloat("Speed", moveSpeed);
+
         attackTimer += Time.deltaTime;
         skillTimer += Time.deltaTime;
 
-        CheckPhase();
     }
 
     void FindPlayer()
@@ -84,6 +101,8 @@ public class Boss : MonoBehaviour
         Vector2 dir = (player.position - transform.position).normalized;
         transform.position += (Vector3)(dir * speed * Time.deltaTime);
 
+        anim.SetFloat("Speed", speed);
+
         if (dist < 6f && attackTimer >= attackCooldown)
         {
             currentState = State.Attack;
@@ -98,10 +117,14 @@ public class Boss : MonoBehaviour
     {
         attackTimer = 0f;
 
+        anim.SetTrigger("Attack"); // 🔥 เล่น animation
+
         StartCoroutine(ShootBurst());
 
         currentState = State.Chase;
     }
+
+    public Transform firePoint;
 
     IEnumerator ShootBurst()
     {
@@ -109,12 +132,14 @@ public class Boss : MonoBehaviour
 
         for (int i = 0; i < bulletCount; i++)
         {
-            Vector2 dir = (player.position - transform.position).normalized;
+            if (player == null) yield break;
 
-            Bullet b = Instantiate(bulletPrefab, transform.position, Quaternion.identity)
-    .GetComponent<Bullet>();
+            Vector2 dir = (player.position - firePoint.position).normalized;
 
-            b.Init(dir, damage); // ใส่ดาเมจ boss
+            EnemyBullet b = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity)
+                .GetComponent<EnemyBullet>();
+
+            b.Init(dir, damage);
 
             yield return new WaitForSeconds(0.2f);
         }
@@ -123,6 +148,8 @@ public class Boss : MonoBehaviour
     IEnumerator Dash()
     {
         currentState = State.Skill;
+
+        anim.SetTrigger("Skill"); // 🔥 เล่น skill
 
         skillTimer = 0f;
 
@@ -138,43 +165,17 @@ public class Boss : MonoBehaviour
 
         currentState = State.Chase;
     }
-
-    void CheckPhase()
+    void Flip()
     {
-        if (!phase2 && currentHP <= maxHP / 2)
-        {
-            phase2 = true;
+        if (player == null) return;
 
-            attackCooldown *= 0.7f; // ยิงเร็วขึ้น
-            speed *= 1.5f;
+        Vector3 scale = pivot.localScale;
 
-            Debug.Log("🔥 Boss Phase 2!");
-        }
-    }
+        if (player.position.x < transform.position.x)
+            scale.x = Mathf.Abs(scale.x);   // หันขวา
+        else
+            scale.x = -Mathf.Abs(scale.x);  // หันซ้าย
 
-    public void TakeDamage(int dmg)
-    {
-        currentHP -= dmg;
-
-        if (currentHP <= 0)
-        {
-            Die();
-        }
-    }
-
-    void Die()
-    {
-        currentState = State.Dead;
-
-        Debug.Log("💀 Boss Dead");
-
-        Destroy(gameObject);
-
-        total += 100; // 🔥 สมมติได้ 100 META_MONEY จากการชนะบอส
-        PlayerPrefs.SetInt("META_MONEY", total);
-        PlayerPrefs.Save();
-        Destroy(GameObject.FindWithTag("Player")); // 🔥 ทำลายตัวละครผู้เล่น
-        EndGameData.instance.isWin = true;
-        SceneManager.LoadScene("EndGame");
+        pivot.localScale = scale;
     }
 }

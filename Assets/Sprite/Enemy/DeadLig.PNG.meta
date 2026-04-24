@@ -1,0 +1,467 @@
+fileFormatVersion: 2
+guid: 5caec6eb323033c4e8ee1fdb169883c9
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4595851931013848996
+    second: DeadLig_0
+  - first:
+      213: 5556730299508937317
+    second: DeadLig_1
+  - first:
+      213: -5857532594597132771
+    second: DeadLig_2
+  - first:
+      213: -6739359602893352740
+    second: DeadLig_3
+  - first:
+      213: -2047487441086707356
+    second: DeadLig_4
+  - first:
+      213: 8357161141194383708
+    second: DeadLig_5
+  - first:
+      213: -5666865023645486523
+    second: DeadLig_6
+  - first:
+      213: 2039019159876845959
+    second: DeadLig_7
+  - first:
+      213: 5036597667180804758
+    second: DeadLig_8
+  - first:
+      213: 3340199559589902419
+    second: DeadLig_9
+  - first:
+      213: -8481636630436339669
+    second: DeadLig_10
+  - first:
+      213: 1357259630152464769
+    second: DeadLig_11
+  - first:
+      213: 8333155533896925349
+    second: DeadLig_12
+  - first:
+      213: -1483039978427566826
+    second: DeadLig_13
+  - first:
+      213: -8912835405675745166
+    second: DeadLig_14
+  - first:
+      213: -3913644388485406945
+    second: DeadLig_15
+  - first:
+      213: 3039135364205730190
+    second: DeadLig_16
+  - first:
+      213: 6177718343269961728
+    second: DeadLig_17
+  - first:
+      213: 4285314398257364553
+    second: DeadLig_18
+  - first:
+      213: -7016162568487435334
+    second: DeadLig_19
+  - first:
+      213: 4464688701526306333
+    second: DeadLig_20
+  - first:
+      213: -5857230871587179425
+    second: DeadLig_21
+  - first:
+      213: 3134583435176087996
+    second: DeadLig_22
+  - first:
+      213: -5437154271472497187
+    second: DeadLig_23
+  - first:
+      213: 6652497058092158458
+    second: DeadLig_24
+  - first:
+      213: -67118460835853602
+    second: DeadLig_25
+  - first:
+      213: 415941448663556688
+    second: DeadLig_26
+  - first:
+      213: -8168279171989298775
+    second: DeadLig_27
+  - first:
+      213: 3372561282923346287
+    second: DeadLig_28
+  - first:
+      213: -1457389329182511548
+    second: DeadLig_29
+  - first:
+      213: 6313788770932625188
+    second: DeadLig_30
+  - first:
+      213: 3126029565616345946
+    second: DeadLig_31
+  - first:
+      213: -5676567474924534150
+    second: DeadLig_32
+  - first:
+      213: 6823227067484170685
+    second: DeadLig_33
+  - first:
+      213: -8037526937383082547
+    second: DeadLig_34
+  - first:
+      213: -2339997789429873259
+    second: DeadLig_35
+  - first:
+      213: 4559004892723636726
+    second: DeadLig_36
+  - first:
+      213: -5989214138386399367
+    second: DeadLig_37
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: DeadLig_0
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 1132
+        width: 420
+        height: 420
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5060a3c4014830c0800000000000000
+      internalID: -4595851931013848996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeadLig_1
+      rect:
+        serializedVersion: 2
+        x: 970
+        y: 1131
+        width: 420
+        height: 420
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56251ee34c87d1d40800000000000000
+      internalID: 5556730299508937317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeadLig_2
+      rect:
+        serializedVersion: 2
+        x: 1503
+        y: 1135
+        width: 420
+        height: 420
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1604c6c32dd5bea0800000000000000
+      internalID: -5857532594597132771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeadLig_3
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 601
+        width: 420
+        height: 420
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd09ce7d52cf872a0800000000000000
+      internalID: -6739359602893352740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeadLig_4
+      rect:
+        serializedVersion: 2
+        x: 967
+        y: 603
+        width: 420
+        height: 420
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46904f7350dd593e0800000000000000
+      internalID: -2047487441086707356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeadLig_5
+      rect:
+        serializedVersion: 2
+        x: 1504
+        y: 594
+        width: 420
+        height: 420
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c51e69f97c99af370800000000000000
+      internalID: 8357161141194383708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeadLig_6
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 62
+        width: 420
+        height: 420
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 542768b09404b51b0800000000000000
+      internalID: -5666865023645486523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeadLig_7
+      rect:
+        serializedVersion: 2
+        x: 962
+        y: 64
+        width: 420
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4731ec346295c5349965e57497b605e7
+      internalID: 2039019159876845959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeadLig_8
+      rect:
+        serializedVersion: 2
+        x: 1510
+        y: 49
+        width: 420
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f194f585ea7c154f9eb52f6791d4ea7
+      internalID: 5036597667180804758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 422bb2740c4cfbd43bcdf3fa0f0df93b
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      DeadLig_0: -4595851931013848996
+      DeadLig_1: 5556730299508937317
+      DeadLig_10: -8481636630436339669
+      DeadLig_11: 1357259630152464769
+      DeadLig_12: 8333155533896925349
+      DeadLig_13: -1483039978427566826
+      DeadLig_14: -8912835405675745166
+      DeadLig_15: -3913644388485406945
+      DeadLig_16: 3039135364205730190
+      DeadLig_17: 6177718343269961728
+      DeadLig_18: 4285314398257364553
+      DeadLig_19: -7016162568487435334
+      DeadLig_2: -5857532594597132771
+      DeadLig_20: 4464688701526306333
+      DeadLig_21: -5857230871587179425
+      DeadLig_22: 3134583435176087996
+      DeadLig_23: -5437154271472497187
+      DeadLig_24: 6652497058092158458
+      DeadLig_25: -67118460835853602
+      DeadLig_26: 415941448663556688
+      DeadLig_27: -8168279171989298775
+      DeadLig_28: 3372561282923346287
+      DeadLig_29: -1457389329182511548
+      DeadLig_3: -6739359602893352740
+      DeadLig_30: 6313788770932625188
+      DeadLig_31: 3126029565616345946
+      DeadLig_32: -5676567474924534150
+      DeadLig_33: 6823227067484170685
+      DeadLig_34: -8037526937383082547
+      DeadLig_35: -2339997789429873259
+      DeadLig_36: 4559004892723636726
+      DeadLig_37: -5989214138386399367
+      DeadLig_4: -2047487441086707356
+      DeadLig_5: 8357161141194383708
+      DeadLig_6: -5666865023645486523
+      DeadLig_7: 2039019159876845959
+      DeadLig_8: 5036597667180804758
+      DeadLig_9: 3340199559589902419
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

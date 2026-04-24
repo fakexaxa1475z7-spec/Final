@@ -11,6 +11,15 @@ public class WeaponShopManager : MonoBehaviour
     void Start()
     {
         Open();
+        InitLockData();
+    }
+    void InitLockData()
+    {
+        if (ShopData.weaponLocked == null ||
+            ShopData.weaponLocked.Length != buttons.Length)
+        {
+            ShopData.weaponLocked = new bool[buttons.Length];
+        }
     }
 
     public void Open()
@@ -21,12 +30,23 @@ public class WeaponShopManager : MonoBehaviour
 
     public void Generate()
     {
+        // 🔥 กัน null + ขนาดไม่ตรง
+        if (ShopData.weaponLocked == null ||
+            ShopData.weaponLocked.Length != buttons.Length)
+        {
+            ShopData.weaponLocked = new bool[buttons.Length];
+        }
+
         var pool = new List<WeaponData>(allWeapons);
 
         for (int i = 0; i < buttons.Length; i++)
         {
+            if (buttons[i] == null) continue; // 🔥 กัน inspector ลืมใส่
+
             buttons[i].isLocked = ShopData.weaponLocked[i];
-            buttons[i].lockIcon.SetActive(buttons[i].isLocked);
+
+            if (buttons[i].lockIcon != null)
+                buttons[i].lockIcon.SetActive(buttons[i].isLocked);
 
             if (buttons[i].isLocked) continue;
 

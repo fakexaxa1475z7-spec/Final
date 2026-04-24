@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f312ab43eba4cb048a9f83157467ef36, type: 3}
+  m_Name: W_Dab
+  m_EditorClassIdentifier: Assembly-CSharp::WeaponData
+  weaponName: Dab
+  weaponType: 2
+  bulletPrefab: {fileID: 2945386948711080000, guid: 315c5143e58dcc749a305bb9abcbca1d, type: 3}
+  weaponModel: {fileID: 3457549335224409496, guid: 8d1594028c1dffa479ce3db69c464759, type: 3}
+  fireRate: 1.5
+  damage: 2
+  cost: 100
+  pelletCount: 0
+  spread: 0

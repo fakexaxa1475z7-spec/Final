@@ -1,0 +1,455 @@
+fileFormatVersion: 2
+guid: 19082c4603d2df445a0f31ce9cb7804a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6716835242636111375
+    second: DeadRed_0
+  - first:
+      213: 6846701002565177610
+    second: DeadRed_1
+  - first:
+      213: 9016322853100972833
+    second: DeadRed_2
+  - first:
+      213: -881327566932039856
+    second: DeadRed_3
+  - first:
+      213: 5876081966214428144
+    second: DeadRed_4
+  - first:
+      213: 5503750216119886522
+    second: DeadRed_5
+  - first:
+      213: 197648011999491656
+    second: DeadRed_6
+  - first:
+      213: -511758450671932087
+    second: DeadRed_7
+  - first:
+      213: 3625385361609363446
+    second: DeadRed_8
+  - first:
+      213: -1590896980359863429
+    second: DeadRed_9
+  - first:
+      213: 2240069708656219227
+    second: DeadRed_10
+  - first:
+      213: -6817607955780158224
+    second: DeadRed_11
+  - first:
+      213: 157148728006160143
+    second: DeadRed_12
+  - first:
+      213: 8986210008018442314
+    second: DeadRed_13
+  - first:
+      213: -5732462043206420588
+    second: DeadRed_14
+  - first:
+      213: -1916974973160965746
+    second: DeadRed_15
+  - first:
+      213: -3397515523744002049
+    second: DeadRed_16
+  - first:
+      213: 1085449083952028275
+    second: DeadRed_17
+  - first:
+      213: -4156739866191365462
+    second: DeadRed_18
+  - first:
+      213: 6976424656092907147
+    second: DeadRed_19
+  - first:
+      213: 2466619506025898789
+    second: DeadRed_20
+  - first:
+      213: -6107848754699287994
+    second: DeadRed_21
+  - first:
+      213: 6648717328424265186
+    second: DeadRed_22
+  - first:
+      213: -2259478421333175636
+    second: DeadRed_23
+  - first:
+      213: -3716581439135421958
+    second: DeadRed_24
+  - first:
+      213: 6785711010747084446
+    second: DeadRed_25
+  - first:
+      213: -5652574667981112612
+    second: DeadRed_26
+  - first:
+      213: 7849879903056896836
+    second: DeadRed_27
+  - first:
+      213: -5548838169421474842
+    second: DeadRed_28
+  - first:
+      213: -2837105655670379947
+    second: DeadRed_29
+  - first:
+      213: 642652416977528002
+    second: DeadRed_30
+  - first:
+      213: -6855358545866873232
+    second: DeadRed_31
+  - first:
+      213: -108750676934816296
+    second: DeadRed_32
+  - first:
+      213: 3695150618790946785
+    second: DeadRed_33
+  - first:
+      213: 7746451272763298036
+    second: DeadRed_34
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 200
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: DeadRed_0
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 1087
+        width: 470
+        height: 470
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0e662cd01ef63d50800000000000000
+      internalID: 6716835242636111375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeadRed_1
+      rect:
+        serializedVersion: 2
+        x: 1269
+        y: 1091
+        width: 470
+        height: 470
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a015535594e540f50800000000000000
+      internalID: 6846701002565177610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeadRed_2
+      rect:
+        serializedVersion: 2
+        x: 1812
+        y: 1110
+        width: 470
+        height: 470
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12be1574dd9602d70800000000000000
+      internalID: 9016322853100972833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeadRed_3
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 561
+        width: 470
+        height: 470
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 057a1425f35e4c3f0800000000000000
+      internalID: -881327566932039856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeadRed_4
+      rect:
+        serializedVersion: 2
+        x: 726
+        y: 565
+        width: 470
+        height: 470
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f53a4b5a690c8150800000000000000
+      internalID: 5876081966214428144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeadRed_5
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 574
+        width: 470
+        height: 470
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab22e4459af316c40800000000000000
+      internalID: 5503750216119886522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeadRed_6
+      rect:
+        serializedVersion: 2
+        x: 1806
+        y: 573
+        width: 470
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 846bac9d1df2eb200800000000000000
+      internalID: 197648011999491656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeadRed_7
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 30
+        width: 470
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94d25e8866ed5e8f0800000000000000
+      internalID: -511758450671932087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeadRed_8
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 30
+        width: 470
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ff80ac37c4ff4230800000000000000
+      internalID: 3625385361609363446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: ac5c11019f43ee44e9ee687a6fe7b42f
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      DeadRed_0: 6716835242636111375
+      DeadRed_1: 6846701002565177610
+      DeadRed_10: 2240069708656219227
+      DeadRed_11: -6817607955780158224
+      DeadRed_12: 157148728006160143
+      DeadRed_13: 8986210008018442314
+      DeadRed_14: -5732462043206420588
+      DeadRed_15: -1916974973160965746
+      DeadRed_16: -3397515523744002049
+      DeadRed_17: 1085449083952028275
+      DeadRed_18: -4156739866191365462
+      DeadRed_19: 6976424656092907147
+      DeadRed_2: 9016322853100972833
+      DeadRed_20: 2466619506025898789
+      DeadRed_21: -6107848754699287994
+      DeadRed_22: 6648717328424265186
+      DeadRed_23: -2259478421333175636
+      DeadRed_24: -3716581439135421958
+      DeadRed_25: 6785711010747084446
+      DeadRed_26: -5652574667981112612
+      DeadRed_27: 7849879903056896836
+      DeadRed_28: -5548838169421474842
+      DeadRed_29: -2837105655670379947
+      DeadRed_3: -881327566932039856
+      DeadRed_30: 642652416977528002
+      DeadRed_31: -6855358545866873232
+      DeadRed_32: -108750676934816296
+      DeadRed_33: 3695150618790946785
+      DeadRed_34: 7746451272763298036
+      DeadRed_4: 5876081966214428144
+      DeadRed_5: 5503750216119886522
+      DeadRed_6: 197648011999491656
+      DeadRed_7: -511758450671932087
+      DeadRed_8: 3625385361609363446
+      DeadRed_9: -1590896980359863429
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

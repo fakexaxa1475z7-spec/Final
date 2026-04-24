@@ -6,6 +6,7 @@ public class CharacterData : ScriptableObject
     public bool isDefault;
     public string characterID;
     public string characterName;
+    public GameObject prefab;
 
     public int maxHP;
     public int damage;

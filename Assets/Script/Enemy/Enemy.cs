@@ -3,8 +3,12 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public float speed = 2f;
+    public float scale = 1f;
+    public int face = 1;
 
     Transform player;
+
+    int facing = 1; // 1 = ขวา, -1 = ซ้าย
 
     void Start()
     {
@@ -21,33 +25,42 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         FindPlayer();
-
         if (player == null) return;
 
         Vector2 dir = (player.position - transform.position).normalized;
 
-        if (dir.x > 0)
-            transform.localScale = new Vector3(-1, 1, 1);   // หันขวา
-        else if (dir.x < 0)
-            transform.localScale = new Vector3(1, 1, 1);  // หันซ้าย
+        Move(dir);
+    }
+    void LateUpdate()
+    {
+        FindPlayer();
+        if (player == null) return;
 
+        Vector2 dir = (player.position - transform.position).normalized;
+
+        if (Mathf.Abs(dir.x) > 0.1f)
+        {
+            facing = dir.x > 0 ? face : -face;
+        }
+
+        transform.localScale = new Vector3(-facing * scale, scale, 1);
+    }
+
+
+    void Move(Vector2 dir)
+    {
         transform.position += (Vector3)(dir * speed * Time.deltaTime);
     }
 
     void FindPlayer()
     {
-        // 🔥 ใช้ instance
         if (player == null && PlayerStats.instance != null)
-        {
             player = PlayerStats.instance.transform;
-        }
 
-        // fallback
         if (player == null)
         {
             GameObject p = GameObject.FindGameObjectWithTag("Player");
-            if (p != null)
-                player = p.transform;
+            if (p != null) player = p.transform;
         }
     }
 

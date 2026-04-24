@@ -1,0 +1,455 @@
+fileFormatVersion: 2
+guid: ae034c676bf6817488ec5a277a96699f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6327623982347888468
+    second: DeadYell_0
+  - first:
+      213: 502713703131682159
+    second: DeadYell_1
+  - first:
+      213: 2456601485690897301
+    second: DeadYell_2
+  - first:
+      213: -4701874375214629975
+    second: DeadYell_3
+  - first:
+      213: -3743329605823338191
+    second: DeadYell_4
+  - first:
+      213: 4173268752217563238
+    second: DeadYell_5
+  - first:
+      213: 7637834080934839436
+    second: DeadYell_6
+  - first:
+      213: -7150242508749747046
+    second: DeadYell_7
+  - first:
+      213: -2386622867613778545
+    second: DeadYell_8
+  - first:
+      213: -6324068148954635883
+    second: DeadYell_9
+  - first:
+      213: 1597584907808611905
+    second: DeadYell_10
+  - first:
+      213: -6183439820319284226
+    second: DeadYell_11
+  - first:
+      213: 8442944638969179795
+    second: DeadYell_12
+  - first:
+      213: 8583245555142790410
+    second: DeadYell_13
+  - first:
+      213: 2729378539053664030
+    second: DeadYell_14
+  - first:
+      213: -4953662615955474005
+    second: DeadYell_15
+  - first:
+      213: 6648799552921789209
+    second: DeadYell_16
+  - first:
+      213: 8949483120513704200
+    second: DeadYell_17
+  - first:
+      213: 5160626675041753401
+    second: DeadYell_18
+  - first:
+      213: -4828108086620402499
+    second: DeadYell_19
+  - first:
+      213: -169697503337634862
+    second: DeadYell_20
+  - first:
+      213: 9095645940965693702
+    second: DeadYell_21
+  - first:
+      213: 1913927282188694856
+    second: DeadYell_22
+  - first:
+      213: 1292588094132688025
+    second: DeadYell_23
+  - first:
+      213: 4289642371729309405
+    second: DeadYell_24
+  - first:
+      213: 4040856180335715735
+    second: DeadYell_25
+  - first:
+      213: -5555922485672976981
+    second: DeadYell_26
+  - first:
+      213: 4271889153144534484
+    second: DeadYell_27
+  - first:
+      213: -3216162344143259513
+    second: DeadYell_28
+  - first:
+      213: -1649071811739229582
+    second: DeadYell_29
+  - first:
+      213: -185456531254959467
+    second: DeadYell_30
+  - first:
+      213: 249916699413125317
+    second: DeadYell_31
+  - first:
+      213: 4668453391083028263
+    second: DeadYell_32
+  - first:
+      213: 2306326076618459352
+    second: DeadYell_33
+  - first:
+      213: -761737754583055530
+    second: DeadYell_34
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: DeadYell_0
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 1082
+        width: 470
+        height: 470
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca859e36383cf28a0800000000000000
+      internalID: -6327623982347888468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeadYell_1
+      rect:
+        serializedVersion: 2
+        x: 1271
+        y: 1091
+        width: 470
+        height: 470
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6592e2137ff9f600800000000000000
+      internalID: 502713703131682159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeadYell_2
+      rect:
+        serializedVersion: 2
+        x: 1811
+        y: 1112
+        width: 470
+        height: 470
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5938d4d190a971220800000000000000
+      internalID: 2456601485690897301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeadYell_3
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 554
+        width: 470
+        height: 470
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9abf1d6da269fbeb0800000000000000
+      internalID: -4701874375214629975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeadYell_4
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 560
+        width: 470
+        height: 470
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13962b77e850d0cc0800000000000000
+      internalID: -3743329605823338191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeadYell_5
+      rect:
+        serializedVersion: 2
+        x: 1263
+        y: 569
+        width: 470
+        height: 470
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6606a28b1dd6ae930800000000000000
+      internalID: 4173268752217563238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeadYell_6
+      rect:
+        serializedVersion: 2
+        x: 1797
+        y: 568
+        width: 470
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c844e7f21a90ff960800000000000000
+      internalID: 7637834080934839436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeadYell_7
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 25
+        width: 470
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9cc218625c35cc90800000000000000
+      internalID: -7150242508749747046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeadYell_8
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 22
+        width: 470
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8d7e03952301eed0800000000000000
+      internalID: -2386622867613778545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5a59e4330b70dde42811b40b0f4011fd
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      DeadYell_0: -6327623982347888468
+      DeadYell_1: 502713703131682159
+      DeadYell_10: 1597584907808611905
+      DeadYell_11: -6183439820319284226
+      DeadYell_12: 8442944638969179795
+      DeadYell_13: 8583245555142790410
+      DeadYell_14: 2729378539053664030
+      DeadYell_15: -4953662615955474005
+      DeadYell_16: 6648799552921789209
+      DeadYell_17: 8949483120513704200
+      DeadYell_18: 5160626675041753401
+      DeadYell_19: -4828108086620402499
+      DeadYell_2: 2456601485690897301
+      DeadYell_20: -169697503337634862
+      DeadYell_21: 9095645940965693702
+      DeadYell_22: 1913927282188694856
+      DeadYell_23: 1292588094132688025
+      DeadYell_24: 4289642371729309405
+      DeadYell_25: 4040856180335715735
+      DeadYell_26: -5555922485672976981
+      DeadYell_27: 4271889153144534484
+      DeadYell_28: -3216162344143259513
+      DeadYell_29: -1649071811739229582
+      DeadYell_3: -4701874375214629975
+      DeadYell_30: -185456531254959467
+      DeadYell_31: 249916699413125317
+      DeadYell_32: 4668453391083028263
+      DeadYell_33: 2306326076618459352
+      DeadYell_34: -761737754583055530
+      DeadYell_4: -3743329605823338191
+      DeadYell_5: 4173268752217563238
+      DeadYell_6: 7637834080934839436
+      DeadYell_7: -7150242508749747046
+      DeadYell_8: -2386622867613778545
+      DeadYell_9: -6324068148954635883
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

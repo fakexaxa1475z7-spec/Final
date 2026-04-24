@@ -28,12 +28,14 @@ public class Spawner : MonoBehaviour
 
     [Header("Spawn Mode")]
     public bool spawnOnEdge = false; // true = spawn ขอบแมพ
+    public bool isBossLevel = false;
 
     float timer;
 
     void Start()
     {
-        if (GameTimer.isBossLevel)
+        FindPlayer();
+        if (isBossLevel)
         {
             Instantiate(bossPrefab, GetSpawnPosition(), Quaternion.identity);
         }

@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class GameTimer : MonoBehaviour
 {
-    static public bool isBossLevel = false; // 🔥 กำหนดใน Inspector
+    public bool isBossLevel = false; // 🔥 กำหนดใน Inspector
 
     public float gameTime = 60f;
 
