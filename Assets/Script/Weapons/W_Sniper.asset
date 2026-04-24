@@ -17,7 +17,7 @@ MonoBehaviour:
   weaponType: 0
   bulletPrefab: {fileID: 4727566914043680897, guid: 84a052cdd8c938440a1faf94398d87d8, type: 3}
   weaponModel: {fileID: 3457549335224409496, guid: 6e67c93edf0cce84bb19b441750e8c35, type: 3}
-  fireRate: 0.3
+  fireRate: 0.7
   damage: 9
   cost: 100
   pelletCount: 0

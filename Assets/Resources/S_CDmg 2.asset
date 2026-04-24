@@ -21,4 +21,4 @@ MonoBehaviour:
   critDamage: 0.2
   moveSpeed: 0
   hpRegen: 0
-  cost: 40
+  cost: 20
